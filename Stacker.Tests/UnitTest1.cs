@@ -23,6 +23,8 @@ namespace Stacker.Tests
 
         [Test] public void TestStackerManagerEmptyStackable() => TestStackable<EmptyStackable>();
         [Test] public void TestStackerManagerMultiEmptyStackable() => TestStackable<EmptyStackable>(5);
+        [Test] public void TestStackerManagerSingleEmptyStackable() => TestSingleTypeStackable<EmptyStackable>();
+        [Test] public void TestStackerManagerSingleMultiEmptyStackable() => TestSingleTypeStackable<EmptyStackable>(5);
 
         public static void TestStackable<T>(int count = 1)
         where T : IStackable, new()
@@ -31,6 +33,17 @@ namespace Stacker.Tests
             for (int i = 0; i < count; i++) byteStack.Add(new T());
             var stack = byteStack.Stack();
             Assert.AreEqual(ByteStack.Unstack(stack).Stackables[0].GetType(), typeof(T));
+            Console.WriteLine();
+            Assert.Pass();
+        }
+        
+        public static void TestSingleTypeStackable<T>(int count = 1)
+            where T : class, IStackable, new()
+        {
+            var byteStack = new SingleTypeByteStack<T>();
+            for (int i = 0; i < count; i++) byteStack.Add(new T());
+            var stack = byteStack.Stack();
+            Assert.AreEqual(SingleTypeByteStack<T>.Unstack(stack).Stackables[0].GetType(), typeof(T));
             Console.WriteLine();
             Assert.Pass();
         }
