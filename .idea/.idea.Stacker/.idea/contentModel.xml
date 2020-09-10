@@ -12,12 +12,13 @@
     <e p="$USER_HOME$/.nuget/packages/nunit3testadapter/3.15.1/build/netcoreapp2.0/nunit.engine.dll" t="Include" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="Stacker" t="IncludeRecursive">
+        <e p="ByteStack.cs" t="Include" />
         <e p="Extenders" t="Include">
           <e p="StreamHelper.cs" t="Include" />
         </e>
         <e p="IStackable.cs" t="Include" />
+        <e p="SingleTypeByteStack.cs" t="Include" />
         <e p="Stacker.csproj" t="IncludeRecursive" />
-        <e p="StackerManager.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

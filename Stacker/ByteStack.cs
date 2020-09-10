@@ -57,7 +57,7 @@ namespace Stacker
             else throw new InvalidDataException("Class received is not IStackable.");
         }
 
-        private static Type? FindType(string name) =>
+        internal static Type? FindType(string name) =>
             AppDomain.CurrentDomain
                 .GetAssemblies()
                 .SelectMany(a => a.GetTypes())
