@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <NeutralLanguage>en-US</NeutralLanguage>
+        <AssemblyOriginatorKeyFile>liamkey.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+
+</Project>
